@@ -79,6 +79,21 @@ public class DrawDemo
     }
     
     /**
+     * Metodo para dibujar un triangulo verde con las coordenadas 
+     * pasadas por parametro
+     * @param   xPos Coordenadas de x
+     * @param   yPos Coordenadas de y
+     */
+    public void drawTriangle(int xPos, int yPos){
+        Pen pen = new Pen(xPos, yPos, myCanvas);
+        pen.setColor(Color.GREEN);
+        for (int i=0; i<3; i++) {
+            pen.move(100);
+            pen.turn(120);
+        }
+    }
+    
+    /**
      * Clear the screen.
      */
     public void clear()
