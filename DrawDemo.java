@@ -111,12 +111,30 @@ public class DrawDemo
     public void drawPolygon(int n){
         Pen pen = new Pen(200, 100, myCanvas);
         pen.setColor(Color.BLACK);
-        for (int i=0; i<n; i++) {
-            pen.move(100);
-            pen.turn(360/n);
+        if(n > 2){
+            for (int i=0; i<n; i++) {
+                pen.move(100);
+                pen.turn(360/n);
+            }
+        }
+        else{
+            System.out.println("Error, para poder dibujar un poligono necesitamos un valor minimo de 3 lados");
         }
     }
 
+    /**
+     * Metodo para dibujar un pentagono verde
+     */
+    public void drawSpiral(){
+        Pen pen = new Pen(200, 100, myCanvas);
+        pen.turn(180);
+        pen.setColor(Color.BLACK);
+        for (int i=0; i<64; i++) {
+            pen.turn(270);
+            pen.move(128-i*2);
+        }
+    }
+    
     /**
      * Clear the screen.
      */
