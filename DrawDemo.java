@@ -73,11 +73,11 @@ public class DrawDemo
             int green = random.nextInt(256);
             int blue = random.nextInt(256);
             pen.setColor(new Color(red, green, blue));
-            
+
             pen.randomSquiggle();
         }
     }
-    
+
     /**
      * Metodo para dibujar un triangulo verde con las coordenadas 
      * pasadas por parametro
@@ -92,7 +92,7 @@ public class DrawDemo
             pen.turn(120);
         }
     }
-    
+
     /**
      * Metodo para dibujar un pentagono verde
      */
@@ -104,7 +104,19 @@ public class DrawDemo
             pen.turn(288);
         }
     }
-    
+
+    /**
+     * Metodo para dibujar un pentagono verde
+     */
+    public void drawPolygon(int n){
+        Pen pen = new Pen(200, 100, myCanvas);
+        pen.setColor(Color.BLACK);
+        for (int i=0; i<n; i++) {
+            pen.move(100);
+            pen.turn(360/n);
+        }
+    }
+
     /**
      * Clear the screen.
      */
